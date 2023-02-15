@@ -1,0 +1,7 @@
+#inputs.container {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 25px;
+    column-gap: 50px;
+    margin-bottom: 25px;
+}

@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+nav {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    background-color: teal;
+    color: white;
+}
+
+nav a:hover {
+    /* background-color: rgb(6, 64, 64); */
+    letter-spacing: 0.1em;
+    transition: 0.3s letter-spacing, 2s opacity;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.1);
+}
+.navbar-brand {
+    font-weight: 800;
+    font-size: 2rem;
+    transition: transform 0.2s;
+}
+
+.loginSignin {
+    display: flex;
+    gap: 10px;
+    margin-right: 10px;
+}
+.loginSignin button {
+    transition: ease-in 0.1s;
+    width: 100px;
+    background-color: #fff;
+    border: 0;
+    border-radius: 8px;
+    color: teal;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 8px;
+}
+.loginSignin button:hover {
+    border: #fff dashed 0.5px;
+    background-color: teal;
+    color: #fff;
+}

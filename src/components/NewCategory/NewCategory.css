@@ -1,0 +1,23 @@
+#categoryItem {
+    margin: auto;
+    height: 100px;
+    width: 50em;
+}
+
+#categoryItem button {
+    height: 40px;
+    width: 100px;
+}
+
+#categoryItem .card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.categoryItemBtn {
+    gap: 10px;
+}

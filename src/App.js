@@ -4,6 +4,7 @@ import "./App.css";
 import { NavBarr } from "./components/NavSection/NavBarr";
 import { Admin } from "./components/Admin/Admin";
 import { CreateNews } from "./components/CreateNews/CreateNews";
+import { NewCategory } from "./components/NewCategory/NewCategory";
 
 function App() {
     return (
@@ -16,7 +17,7 @@ function App() {
                     <Route path="/admin/createNews" element={<CreateNews />} />
                     <Route
                         path="/admin/setCategory"
-                        element={<div>setCategory</div>}
+                        element={<NewCategory />}
                     />
                     <Route
                         path="/admin/newsList"

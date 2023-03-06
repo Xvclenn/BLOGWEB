@@ -37,7 +37,7 @@ export function CreateCategory({ onSave }) {
                     onKeyUp={handleKeyUp}
                 />
                 <Button
-                    variant="outline-secondary"
+                    variant="outline-success"
                     id="button-addon2"
                     onSave={handleSave}
                     onClick={handleSave}

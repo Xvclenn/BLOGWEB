@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import axios from "axios";
 
 export function CreateCategory({ onSave }) {
     const [text, setText] = useState("");
@@ -11,6 +12,18 @@ export function CreateCategory({ onSave }) {
     }
 
     function handleSave() {
+        axios
+            .post("http://localhost:8000/categories", { text: text })
+            .then((res) => {
+                console.log(res);
+                // useEffect(() => {
+                //     axios.get("http://localhost:8000/categories",
+                //     then((res) => {
+
+                //     }));
+                // })
+            });
+
         if (text === "") {
         } else {
             onSave(text);

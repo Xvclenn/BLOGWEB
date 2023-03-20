@@ -15,13 +15,7 @@ export function CreateCategory({ onSave }) {
         axios
             .post("http://localhost:8000/categories", { text: text })
             .then((res) => {
-                console.log(res);
-                // useEffect(() => {
-                //     axios.get("http://localhost:8000/categories",
-                //     then((res) => {
-
-                //     }));
-                // })
+                // console.log(res);
             });
 
         if (text === "") {
@@ -52,7 +46,7 @@ export function CreateCategory({ onSave }) {
                 <Button
                     variant="outline-success"
                     id="button-addon2"
-                    onSave={handleSave}
+                    // onSave={handleSave}
                     onClick={handleSave}
                 >
                     New

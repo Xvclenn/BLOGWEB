@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Card from "react-bootstrap/Card";
 import "./NewCategory.css";
-import { useState } from "react";
+import React, { useState } from "react";
 
 import { v4 as uuidv4 } from "uuid";
 import { CreateCategory } from "./CreateCategory";
@@ -46,15 +46,14 @@ export function NewCategory() {
 
             {categories.map((categoryItem, index) => {
                 return (
-                    <>
+                    <React.Fragment key={index}>
                         <TodoListItem
-                            key={categoryItem.id}
                             categoryItem={categoryItem}
                             onUpdate={(text) => handleUpdate(index, text)}
                             onDelete={() => handleDelete(index)}
                         />
                         <br />
-                    </>
+                    </React.Fragment>
                 );
             })}
         </>

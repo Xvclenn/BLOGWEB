@@ -3,9 +3,11 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import { useCategories } from "./useCategories";
 
 export function CreateCategory({ onSave }) {
     const [text, setText] = useState("");
+    const { list } = useCategories();
 
     function handleTextChange(e) {
         setText(e.target.value);
@@ -13,10 +15,8 @@ export function CreateCategory({ onSave }) {
 
     function handleSave() {
         axios
-            .post("http://localhost:8000/categories", { text: text })
-            .then((res) => {
-                // console.log(res);
-            });
+            .post("http://localhost:8000/categories", { name: text })
+            .then((res) => {});
 
         if (text === "") {
         } else {

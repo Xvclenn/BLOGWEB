@@ -3,7 +3,8 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Card from "react-bootstrap/Card";
 import "./NewCategory.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 import { v4 as uuidv4 } from "uuid";
 import { CreateCategory } from "./CreateCategory";
@@ -11,6 +12,17 @@ import { TodoListItem } from "./CategoryItems";
 
 export function NewCategory() {
     const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        axios.get("http://localhost:8000/categories").then(function (res) {
+            const { data, status } = res;
+            if (status === 200) {
+                // console.log(data);
+            } else {
+                alert(`Aldaa garlaa: ${status}`);
+            }
+        });
+    }, []);
 
     function handleSave(text) {
         const newCategory = [

@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import "./NewCategory.css";
 import { useState } from "react";
 
-export function TodoListItem({ categoryItem, onUpdate, onDelete }) {
+export function CategoryItem({ categoryItem, onUpdate, onDelete }) {
     const [editing, setEditing] = useState(false);
 
     function handleSave(text) {
@@ -15,7 +15,7 @@ export function TodoListItem({ categoryItem, onUpdate, onDelete }) {
     if (editing) {
         return (
             <EditingItem
-                defaultValue={categoryItem.categoryName}
+                defaultValue={categoryItem.name}
                 onCancel={() => setEditing(false)}
                 onSave={handleSave}
                 onDelete={onDelete}
@@ -32,7 +32,7 @@ export function TodoListItem({ categoryItem, onUpdate, onDelete }) {
     );
 }
 
-function EditingItem({ onSave, onCancel, onDelete, defaultValue }) {
+export function EditingItem({ onSave, onCancel, onDelete, defaultValue }) {
     const [text, setText] = useState(defaultValue);
     console.log(text);
     return (
@@ -60,7 +60,7 @@ function EditingItem({ onSave, onCancel, onDelete, defaultValue }) {
 function NormalItem({ categoryItem, onEdit, onDelete }) {
     return (
         <Card body id="categoryItem">
-            <span className="ms-3">{categoryItem.categoryName}</span>
+            <span className="ms-3">{categoryItem.name}</span>
             <div className="d-flex categoryItemBtn">
                 <Button variant="warning" onClick={onEdit}>
                     Засах

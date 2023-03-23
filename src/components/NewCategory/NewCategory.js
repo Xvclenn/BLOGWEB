@@ -8,16 +8,17 @@ import axios from "axios";
 
 import { v4 as uuidv4 } from "uuid";
 import { CreateCategory } from "./CreateCategory";
-import { TodoListItem } from "./CategoryItems";
+import { CategoryItem, EditingItem } from "./CategoryItems";
 
 export function NewCategory() {
     const [categories, setCategories] = useState([]);
+    const [list, setList] = useState();
 
     useEffect(() => {
         axios.get("http://localhost:8000/categories").then(function (res) {
             const { data, status } = res;
             if (status === 200) {
-                // console.log(data);
+                setList(data);
             } else {
                 alert(`Aldaa garlaa: ${status}`);
             }
@@ -27,8 +28,8 @@ export function NewCategory() {
     function handleSave(text) {
         const newCategory = [
             {
-                categoryName: text,
-                categoryId: uuidv4(),
+                name: text,
+                _id: uuidv4(),
             },
             ...categories,
         ];
@@ -59,7 +60,7 @@ export function NewCategory() {
             {categories.map((categoryItem, index) => {
                 return (
                     <React.Fragment key={index}>
-                        <TodoListItem
+                        <CategoryItem
                             categoryItem={categoryItem}
                             onUpdate={(text) => handleUpdate(index, text)}
                             onDelete={() => handleDelete(index)}
